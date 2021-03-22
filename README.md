@@ -28,3 +28,9 @@ npm install --save @erkobridee/react-lifecycle-hooks
   - [The Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 
   - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
+
+- NPM peerDependencies
+
+  - [What are peer dependencies in a Node module? | @flaviocopes](https://flaviocopes.com/npm-peer-dependencies/)
+
+  - [Peer Dependencies | Node.js Blog](https://nodejs.org/en/blog/npm/peer-dependencies/)
