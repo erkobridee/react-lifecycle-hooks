@@ -1,0 +1,27 @@
+{
+  "name": "@erkobridee/react-lifecycle-hooks",
+  "version": "0.0.0",
+  "description": "useful set of react hooks to manage any function component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erkobridee/react-lifecycle-hooks.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "npm",
+    "package",
+    "hooks",
+    "lifecycle"
+  ],
+  "author": "Erko Bridee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erkobridee/react-lifecycle-hooks/issues"
+  },
+  "homepage": "https://github.com/erkobridee/react-lifecycle-hooks#readme"
+}
