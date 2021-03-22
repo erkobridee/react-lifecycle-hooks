@@ -1,8 +1,12 @@
 module.exports = {
   root: true,
   env: {
-    browser: true,
     es2021: true,
+    browser: true,
+    commonjs: true,
+    es6: true,
+    jest: true,
+    node: true,
   },
   settings: {
     react: {
