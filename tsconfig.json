@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "es5"
+  },
+  "include": ["src"]
+}
