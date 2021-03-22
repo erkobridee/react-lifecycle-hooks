@@ -26,3 +26,5 @@ npm install --save @erkobridee/react-lifecycle-hooks
   - [State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 
   - [The Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
+
+  - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
