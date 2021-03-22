@@ -34,3 +34,13 @@ npm install --save @erkobridee/react-lifecycle-hooks
   - [What are peer dependencies in a Node module? | @flaviocopes](https://flaviocopes.com/npm-peer-dependencies/)
 
   - [Peer Dependencies | Node.js Blog](https://nodejs.org/en/blog/npm/peer-dependencies/)
+
+- [Jest](https://jestjs.io/)
+
+  - [@testing-library/react](https://testing-library.com/docs/react-testing-library/intro/)
+
+  - [@testing-library/react-hooks](https://react-hooks-testing-library.com/)
+
+  - [Using Jest and RTL with React and TypeScript | Building SPAs](https://www.carlrippon.com/using-jest-and-rtl-with-react-typescript/) - 2021/02/10
+
+    - [[GitHub] carlrip/react-typescript-jest-webpack](https://github.com/carlrip/react-typescript-jest-webpack)
