@@ -6,6 +6,8 @@ According to [A Complete Guide to useEffect | Overreacted](https://overreacted.i
 
 So, to keep peace of mind and manage any function component lifecycle, follow the equivalents hooks to the cases: `useConstructor`, `useDidMount`, `useDidUpdate` and `useWillUnmount`, plus `useForceRender`
 
+⚠️&nbsp;&nbsp;**WARNING:** this library requires a peer dependency of the react.js v16.8.0 or newer
+
 <!--
 ## Install
 
