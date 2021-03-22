@@ -13,7 +13,7 @@ export const Welcome = () => {
 
   return (
     <div className="rounded shadow-md p-3">
-      <h1 className="font-uni-neue text-blue-500">Welcome to {name}!</h1>
+      <h1 className="text-blue-500">Welcome to {name}!</h1>
     </div>
   );
 };
@@ -59,7 +59,7 @@ const MyReactComponent = () => {
 
   return (
     <div className="flex flex-row items-center space-x-3">
-      <div className="font-uni-neue text-blue-500">My React Component</div>
+      <div className="text-blue-500">My React Component</div>
       <span>count: {count}</span>
       <div className="flex flex-row items-center space-x-1">
         <Button onClick={addClickHandler}> + </Button>

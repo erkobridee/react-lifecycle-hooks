@@ -11,7 +11,7 @@ const MyReactComponent = () => {
     console.log('componentWillUnmount: MyReactComponent');
   });
 
-  return <div className="font-uni-neue text-blue-500">My React Component</div>;
+  return <div className="text-blue-500">My React Component</div>;
 };
 
 export const Test = () => {
