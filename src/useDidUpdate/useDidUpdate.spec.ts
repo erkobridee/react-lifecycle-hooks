@@ -1,7 +1,7 @@
 // https://react-hooks-testing-library.com/
 import { renderHook } from '@testing-library/react-hooks';
 
-import useDidUpdate from './useDidUpdate';
+import useDidUpdate from './index';
 
 describe('useDidUpdate', () => {
   it('should call the callback function', () => {

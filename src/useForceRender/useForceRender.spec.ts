@@ -2,7 +2,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import useDidUpdate from '../useDidUpdate';
-import useForceRender from './useForceRender';
+import useForceRender from './index';
 
 describe('useForceRender', () => {
   it('should call the callback function', () => {

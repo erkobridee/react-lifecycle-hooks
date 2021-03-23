@@ -104,6 +104,7 @@ dist
 .tern-port
 
 .husky
+reports
 
 dist-docs
 dist-pack

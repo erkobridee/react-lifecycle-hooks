@@ -9,7 +9,10 @@
     "check:lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "check:typescript": "npx tsc --noEmit",
     "check": "run-s prettify check:lint check:typescript",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean:coverage": "rimraf coverage",
+    "clean:reports": "rimraf reports",
+    "pretest": "run-p clean:coverage clean:reports",
+    "test": "jest"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,md,html,css,scss}": "prettier --write",
@@ -69,6 +72,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "fs-extra": "^9.1.0",
     "husky": "^5.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "is-ci": "^3.0.0",
     "jest": "^26.6.3",
     "jest-junit": "^12.0.0",

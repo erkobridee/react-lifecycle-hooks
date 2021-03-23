@@ -1,7 +1,7 @@
 // https://react-hooks-testing-library.com/
 import { renderHook } from '@testing-library/react-hooks';
 
-import useContructor from './useConstructor';
+import useContructor from './index';
 
 describe('useConstructor', () => {
   it('should call the callback function', () => {

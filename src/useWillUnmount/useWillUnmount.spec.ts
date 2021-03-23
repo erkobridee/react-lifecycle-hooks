@@ -1,7 +1,7 @@
 // https://react-hooks-testing-library.com/
 import { renderHook } from '@testing-library/react-hooks';
 
-import useWillUnmount from './useWillUnmount';
+import useWillUnmount from './index';
 
 describe('useDidMount', () => {
   it('should call the callback function', () => {
