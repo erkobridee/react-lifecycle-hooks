@@ -1,0 +1,50 @@
+name: CI - build and publish
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  build_publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Node.js modules cache
+        uses: actions/cache@v2
+        id: restore-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Node.js dependencies
+        run: npm ci
+        if: steps.restore-cache.outputs.cache-hit != 'true'
+
+      - name: Build docs and npm package
+        run: npm run ci --if-present
+        env:
+          CI: true
+
+      - name: Deploy docs
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist-docs
+
+      - name: Deploy npm package
+        run: |
+          cd dist-pack
+          echo -e "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" >> .npmrc
+          echo -e "registry=https://registry.npmjs.org/" >> .npmrc
+          echo -e "always-auth=true" >> .npmrc
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
