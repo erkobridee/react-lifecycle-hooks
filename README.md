@@ -22,10 +22,164 @@ if you are using on a TypeScript, you'll need to install
 npm install --save-dev @erkobridee/ts-definitions-common
 ```
 
-<!--
 ## API
 
--->
+### useConstructor
+
+```javascript
+import { useConstructor } from '@erkobridee/react-lifecycle-hooks';
+
+// or
+
+import useConstructor from '@erkobridee/react-lifecycle-hooks/useConstructor';
+
+//---
+
+export const Component = () => {
+  useConstructor(() => console.log(`executes before mount the component`));
+
+  return <div>Component</div>;
+};
+
+export default Component;
+```
+
+### useDidMount
+
+```javascript
+import { useDidMount } from '@erkobridee/react-lifecycle-hooks';
+
+// or
+
+import useDidMount from '@erkobridee/react-lifecycle-hooks/useDidMount';
+
+//---
+
+export const Component = () => {
+  useDidMount(() => console.log(`executes after component mounted`));
+
+  return <div>Component</div>;
+};
+
+export default Component;
+```
+
+### useDidUpdate
+
+```javascript
+import React from 'react';
+
+import { useDidUpdate } from '@erkobridee/react-lifecycle-hooks';
+
+// or
+
+import useDidUpdate from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
+
+//---
+
+export const Component = () => {
+  const [count, setCount] = React.useState(0);
+
+  useDidUpdate(() => console.log(`executes whenever the component updates`));
+
+  useDidUpdate(() => console.log(`count value updated to ${count}`), [count]);
+
+  const resetClickHandler = () => setCount(0);
+
+  const addClickHandler = () => setCount((prevValue) => prevValue + 1);
+
+  const subtractClickhandler = () => setCount((prevValue) => prevValue - 1);
+
+  return (
+    <div>
+      <div>Component</div>
+      <div>count: {count}</div>
+      <div>
+        <button onClick={resetClickHandler}>reset</button>
+        <button onClick={addClickHandler}>add</button>
+        <button onClick={subtractClickhandler}>subtract</button>
+      </div>
+    </div>
+  );
+};
+
+export default Component;
+```
+
+### useWillUnmount
+
+```javascript
+import React from 'react';
+
+import { useWillUnmount } from '@erkobridee/react-lifecycle-hooks';
+
+// or
+
+import useWillUnmount from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
+
+//---
+
+const InnerComponent = () => {
+  useWillUnmount(() => console.log(`executes before unmount the component`));
+
+  return <div>Inner Component</div>;
+};
+
+const Component = () => {
+  const [show, setShow] = React.useState(true);
+
+  const removeClickHandler = () => setShow(false);
+
+  return (
+    <div>
+      <div>Component</div>
+      {show && (
+        <div>
+          <button onClick={removeClickHandler}>remove</button>
+          <InnerComponent />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Component;
+```
+
+### useForceRender
+
+```javascript
+import React from 'react';
+
+import { useForceRender } from '@erkobridee/react-lifecycle-hooks';
+
+// or
+
+import useForceRender from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
+
+//---
+
+export const Component = () => {
+  const forceRender = useForceRender();
+
+  const forceRenderClickHandler = () => forceRender();
+
+  React.useEffect(() => {
+    console.log(`component render`);
+  });
+
+  return (
+    <div>
+      <div>Component</div>
+      <div>
+        <button click={forceRenderClickHandler}>force render</button>
+      </div>
+    </div>
+  );
+};
+
+export default Component;
+```
 
 ## Useful references
 
