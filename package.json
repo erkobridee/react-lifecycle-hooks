@@ -12,10 +12,12 @@
     "clean:coverage": "rimraf coverage",
     "clean:reports": "rimraf reports",
     "clean:node_modules:cache": "rimraf node_modules/.cache",
-    "clean": "run-p clean:node_modules:cache clean:coverage clean:reports",
+    "clean:docs": "rimraf dist-docs",
+    "clean": "run-p clean:docs clean:node_modules:cache clean:coverage clean:reports",
     "pretest": "run-p clean:coverage clean:reports",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
+    "prebuild-storybook": "run-s clean:docs",
     "build-storybook": "cross-env NODE_ENV=production build-storybook -o ./dist-docs"
   },
   "lint-staged": {
