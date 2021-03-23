@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+<coverage lines-valid="40" lines-covered="40" line-rate="1" branches-valid="2" branches-covered="2" branch-rate="1" timestamp="1616508889545" complexity="0" version="0.1">
+  <sources>
+    <source>/Users/erko.cabrera/dev/projects/github/erkobridee/react-lifecycle-hooks</source>
+  </sources>
+  <packages>
+    <package name="useConstructor" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="index.ts" filename="src/useConstructor/index.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_5)" hits="2" signature="()V">
+              <lines>
+                <line number="2" hits="2"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="2" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="useConstructor.ts" filename="src/useConstructor/useConstructor.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_6)" hits="2" signature="()V">
+              <lines>
+                <line number="6" hits="2"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="2" branch="false"/>
+            <line number="10" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="useDidMount" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="index.ts" filename="src/useDidMount/index.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_5)" hits="2" signature="()V">
+              <lines>
+                <line number="2" hits="2"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="2" hits="3" branch="false"/>
+          </lines>
+        </class>
+        <class name="useDidMount.ts" filename="src/useDidMount/useDidMount.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_6)" hits="2" signature="()V">
+              <lines>
+                <line number="6" hits="2"/>
+              </lines>
+            </method>
+            <method name="(anonymous_7)" hits="1" signature="()V">
+              <lines>
+                <line number="7" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="2" branch="false"/>
+            <line number="8" hits="1" branch="false"/>
+            <line number="12" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="useDidUpdate" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="index.ts" filename="src/useDidUpdate/index.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_5)" hits="6" signature="()V">
+              <lines>
+                <line number="2" hits="6"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="2" branch="false"/>
+            <line number="2" hits="8" branch="false"/>
+          </lines>
+        </class>
+        <class name="useDidUpdate.ts" filename="src/useDidUpdate/useDidUpdate.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_6)" hits="6" signature="()V">
+              <lines>
+                <line number="6" hits="6"/>
+              </lines>
+            </method>
+            <method name="(anonymous_7)" hits="6" signature="()V">
+              <lines>
+                <line number="9" hits="6"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="2" branch="false"/>
+            <line number="6" hits="2" branch="false"/>
+            <line number="7" hits="6" branch="false"/>
+            <line number="9" hits="6" branch="false"/>
+            <line number="10" hits="6" branch="true" condition-coverage="100% (2/2)"/>
+            <line number="11" hits="2" branch="false"/>
+            <line number="13" hits="4" branch="false"/>
+            <line number="18" hits="2" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="useForceRender" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="index.ts" filename="src/useForceRender/index.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_5)" hits="3" signature="()V">
+              <lines>
+                <line number="2" hits="3"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="2" hits="4" branch="false"/>
+          </lines>
+        </class>
+        <class name="useForceRender.ts" filename="src/useForceRender/useForceRender.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_6)" hits="3" signature="()V">
+              <lines>
+                <line number="4" hits="3"/>
+              </lines>
+            </method>
+            <method name="(anonymous_7)" hits="2" signature="()V">
+              <lines>
+                <line number="7" hits="2"/>
+              </lines>
+            </method>
+            <method name="(anonymous_8)" hits="2" signature="()V">
+              <lines>
+                <line number="8" hits="2"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="4" hits="1" branch="false"/>
+            <line number="5" hits="3" branch="false"/>
+            <line number="7" hits="3" branch="false"/>
+            <line number="8" hits="2" branch="false"/>
+            <line number="11" hits="3" branch="false"/>
+            <line number="14" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+    <package name="useWillUnmount" line-rate="1" branch-rate="1">
+      <classes>
+        <class name="index.ts" filename="src/useWillUnmount/index.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_5)" hits="1" signature="()V">
+              <lines>
+                <line number="2" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="2" hits="2" branch="false"/>
+          </lines>
+        </class>
+        <class name="useWillUnmount.ts" filename="src/useWillUnmount/useWillUnmount.ts" line-rate="1" branch-rate="1">
+          <methods>
+            <method name="(anonymous_6)" hits="1" signature="()V">
+              <lines>
+                <line number="6" hits="1"/>
+              </lines>
+            </method>
+            <method name="(anonymous_7)" hits="1" signature="()V">
+              <lines>
+                <line number="7" hits="1"/>
+              </lines>
+            </method>
+            <method name="(anonymous_8)" hits="1" signature="()V">
+              <lines>
+                <line number="8" hits="1"/>
+              </lines>
+            </method>
+          </methods>
+          <lines>
+            <line number="1" hits="1" branch="false"/>
+            <line number="6" hits="1" branch="false"/>
+            <line number="7" hits="1" branch="false"/>
+            <line number="8" hits="1" branch="false"/>
+            <line number="9" hits="1" branch="false"/>
+            <line number="14" hits="1" branch="false"/>
+          </lines>
+        </class>
+      </classes>
+    </package>
+  </packages>
+</coverage>
