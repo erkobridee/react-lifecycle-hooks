@@ -8,13 +8,19 @@ So, to keep peace of mind and manage any function component lifecycle, follow th
 
 ⚠️&nbsp;&nbsp;**WARNING:** this library requires a peer dependency of the react.js [v16.8.0](https://github.com/facebook/react/releases/tag/v16.8.0) or newer
 
-<!--
 ## Install
 
 ```
 npm install --save @erkobridee/react-lifecycle-hooks
 ```
 
+if you are using on a TypeScript, you'll need to install
+
+```
+npm install --save-dev @erkobridee/ts-definitions-common
+```
+
+<!--
 ## API
 
 -->
