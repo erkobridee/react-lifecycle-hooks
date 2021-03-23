@@ -1,10 +1,65 @@
 {
   "name": "@erkobridee/react-lifecycle-hooks",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "useful set of react hooks to manage any function component",
-  "main": "index.js",
+  "buildConfig": {
+    "outputDir": "dist-pack",
+    "bundleDir": "dist",
+    "bundleEntry": "src/index.ts",
+    "moduleEntries": [
+      "src/useConstructor/index.ts",
+      "src/useDidMount/index.ts",
+      "src/useDidUpdate/index.ts",
+      "src/useForceRender/index.ts",
+      "src/useWillUnmount/index.ts"
+    ]
+  },
+  "packageFilesMap": {
+    "types": ".",
+    "main": "dist/cjs.js",
+    "module": "dist/esm.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "is-ci || npx husky install",
+    "prettify": "npx prettier --write .",
+    "check:lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "check:typescript": "npx tsc --noEmit",
+    "check": "npx run-s prettify check:lint check:typescript",
+    "clean:coverage": "npx rimraf coverage",
+    "clean:reports": "npx rimraf reports",
+    "clean:node_modules:cache": "npx rimraf node_modules/.cache",
+    "clean:docs": "npx rimraf dist-docs",
+    "clean:build": "npx rimraf dist-pack",
+    "clean": "npx run-p clean:build clean:docs clean:node_modules:cache clean:coverage clean:reports",
+    "copy:readme": "npx cpy 'README.md' 'dist-pack'",
+    "copy:coverage": "npx cpy 'coverage' 'dist-docs' --parents",
+    "dist-package-json": "node ./scripts/dist-pack.js",
+    "precompile": "run-s clean:build",
+    "compile": "npx rollup -c",
+    "postcompile": "run-p dist-package-json copy:readme",
+    "pretest": "npx run-p clean:coverage clean:reports",
+    "build": "run-s test compile",
+    "test": "jest",
+    "storybook": "npx start-storybook -p 6006",
+    "prebuild-storybook": "npx npx run-s clean:docs",
+    "build-storybook": "cross-env NODE_ENV=production npx build-storybook -o ./dist-docs",
+    "postbuild-storybook": "touch dist-docs/.nojekyll",
+    "preci": "npx run-s check test",
+    "ci": "npx run-p build build-storybook",
+    "postci": "npx run-s copy:coverage",
+    "deploydocs:gh-pages": "npx gh-pages -d dist-docs --dotfiles",
+    "deploydocs": "npx run-s ci deploydocs:gh-pages",
+    "prepullrequest": "npx run-s check test",
+    "pullrequest": "npx run-p build build-storybook"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,md,html,css,scss}": "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,5 +78,72 @@
   "bugs": {
     "url": "https://github.com/erkobridee/react-lifecycle-hooks/issues"
   },
-  "homepage": "https://github.com/erkobridee/react-lifecycle-hooks#readme"
+  "homepage": "https://github.com/erkobridee/react-lifecycle-hooks#readme",
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "@erkobridee/ts-definitions-common": "^0.6.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
+    "@erkobridee/ts-definitions-common": "^0.6.1",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "@storybook/addon-actions": "^6.2.0-rc.8",
+    "@storybook/addon-console": "^1.2.3",
+    "@storybook/addon-essentials": "^6.2.0-rc.8",
+    "@storybook/addon-links": "^6.2.0-rc.8",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-storysource": "^6.2.0-rc.8",
+    "@storybook/react": "^6.2.0-rc.8",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/react-hooks": "^5.1.0",
+    "@types/jest": "^26.0.21",
+    "@types/node": "^14.14.35",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.2",
+    "@types/webpack": "^4.41.26",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "cpy-cli": "^3.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "fs-extra": "^9.1.0",
+    "gh-pages": "^3.1.0",
+    "husky": "^5.2.0",
+    "identity-obj-proxy": "^3.0.0",
+    "is-ci": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-junit": "^12.0.0",
+    "lint-staged": "^10.5.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.8",
+    "postcss-import": "^14.0.0",
+    "postcss-loader": "^4.1.0",
+    "prettier": "^2.2.1",
+    "prettier-eslint": "^12.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.42.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tailwindcss": "^2.0.4",
+    "ts-jest": "^26.5.4",
+    "ts-node": "^9.1.1",
+    "tslib": "^2.1.0",
+    "typescript": "^4.2.3",
+    "url-loader": "^4.1.1"
+  }
 }

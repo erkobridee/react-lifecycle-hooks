@@ -1,0 +1,5 @@
+.husky
+coverage
+dist-docs
+dist-pack
+reports
