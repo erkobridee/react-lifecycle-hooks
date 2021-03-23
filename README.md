@@ -58,3 +58,5 @@ npm install --save @erkobridee/react-lifecycle-hooks
     - [[GitHub] igor-lid/nextjs-typescript-storybook-tailwind-example](https://github.com/igor-lid/nextjs-typescript-storybook-tailwind-example)
 
 - [TailwindCSS](https://tailwindcss.com/)
+
+- [rollup.js](https://rollupjs.org/guide/en/)
