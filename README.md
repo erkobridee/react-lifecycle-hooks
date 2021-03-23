@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/erkobridee/react-lifecycle-hooks/workflows/CI%20-%20build%20and%20publish/badge.svg)](https://github.com/erkobridee/react-lifecycle-hooks/)
+
 # @erkobridee/react-lifecycle-hooks
 
 According to [A Complete Guide to useEffect | Overreacted](https://overreacted.io/a-complete-guide-to-useeffect/)
