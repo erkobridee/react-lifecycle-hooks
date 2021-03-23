@@ -43,11 +43,14 @@
     "storybook": "npx start-storybook -p 6006",
     "prebuild-storybook": "npx npx run-s clean:docs",
     "build-storybook": "cross-env NODE_ENV=production npx build-storybook -o ./dist-docs",
+    "preci": "npx run-s check test",
     "ci": "npx run-p build build-storybook",
     "postci": "npx run-s copy:coverage",
     "predeploydocs:gh-pages": "touch dist-docs/.nojekyll",
     "deploydocs:gh-pages": "npx gh-pages -d dist-docs --dotfiles",
-    "deploydocs": "npx run-s ci deploydocs:gh-pages"
+    "deploydocs": "npx run-s ci deploydocs:gh-pages",
+    "prepullrequest": "npx run-s check test",
+    "pullrequest": "npx run-p build build-storybook"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,md,html,css,scss}": "prettier --write",

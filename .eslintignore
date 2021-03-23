@@ -1,0 +1,8 @@
+.husky
+.storybook
+coverage
+dist-docs
+dist-pack
+reports
+scripts
+src/__mocks__
