@@ -21,9 +21,7 @@ export default {
   coverageDirectory: 'coverage',
   collectCoverage: true,
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
-    '!coverage',
-    '!reports',
+    'src/**/*.{js,jsx,ts,tsx}',
     '!src/index.ts',
     '!.eslintrc.js',
     '!jest.config.ts',

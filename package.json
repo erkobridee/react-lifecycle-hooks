@@ -2,23 +2,42 @@
   "name": "@erkobridee/react-lifecycle-hooks",
   "version": "0.0.0",
   "description": "useful set of react hooks to manage any function component",
-  "main": "index.js",
+  "buildConfig": {
+    "outputDir": "dist-pack",
+    "bundleDir": "dist",
+    "bundleEntry": "src/index.ts",
+    "moduleEntries": [
+      "src/useConstructor/index.ts",
+      "src/useDidMount/index.ts",
+      "src/useDidUpdate/index.ts",
+      "src/useForceRender/index.ts",
+      "src/useWillUnmount/index.ts"
+    ]
+  },
+  "packageFilesMap": {
+    "types": ".",
+    "main": "dist/cjs.js",
+    "module": "dist/esm.js"
+  },
   "scripts": {
     "postinstall": "is-ci || npx husky install",
-    "prettify": "prettier --write .",
+    "prettify": "npx prettier --write .",
     "check:lint": "npx eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "check:typescript": "npx tsc --noEmit",
-    "check": "run-s prettify check:lint check:typescript",
-    "clean:coverage": "rimraf coverage",
-    "clean:reports": "rimraf reports",
-    "clean:node_modules:cache": "rimraf node_modules/.cache",
-    "clean:docs": "rimraf dist-docs",
-    "clean": "run-p clean:docs clean:node_modules:cache clean:coverage clean:reports",
-    "pretest": "run-p clean:coverage clean:reports",
+    "check": "npx run-s prettify check:lint check:typescript",
+    "clean:coverage": "npx rimraf coverage",
+    "clean:reports": "npx rimraf reports",
+    "clean:node_modules:cache": "npx rimraf node_modules/.cache",
+    "clean:docs": "npx rimraf dist-docs",
+    "clean:build": "npx rimraf dist-pack",
+    "clean": "npx run-p clean:build clean:docs clean:node_modules:cache clean:coverage clean:reports",
+    "copy:readme": "npx cpy 'README.md' 'dist-pack'",
+    "compile": "npx rollup -c",
+    "pretest": "npx run-p clean:coverage clean:reports",
     "test": "jest",
-    "storybook": "start-storybook -p 6006",
-    "prebuild-storybook": "run-s clean:docs",
-    "build-storybook": "cross-env NODE_ENV=production build-storybook -o ./dist-docs"
+    "storybook": "npx start-storybook -p 6006",
+    "prebuild-storybook": "npx npx run-s clean:docs",
+    "build-storybook": "cross-env NODE_ENV=production npx build-storybook -o ./dist-docs"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,md,html,css,scss}": "prettier --write",
@@ -48,11 +67,17 @@
   },
   "homepage": "https://github.com/erkobridee/react-lifecycle-hooks#readme",
   "peerDependencies": {
-    "react": ">= 16.8.0"
+    "react": ">= 16.8.0",
+    "@erkobridee/ts-definitions-common": "^0.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.13.0",
     "@erkobridee/ts-definitions-common": "^0.6.1",
+    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
@@ -99,7 +124,6 @@
     "react-dom": "^17.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.42.3",
-    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "tailwindcss": "^2.0.4",
     "ts-jest": "^26.5.4",
