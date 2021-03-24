@@ -155,7 +155,7 @@ import { useForceRender } from '@erkobridee/react-lifecycle-hooks';
 
 // or
 
-import useForceRender from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
+import useForceRender from '@erkobridee/react-lifecycle-hooks/useForceRender';
 
 //---
 
