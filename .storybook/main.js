@@ -20,15 +20,7 @@ module.exports = {
   addons: [
     '@storybook/addon-postcss',
     '@storybook/addon-links',
-    '@storybook/addon-essentials',
+    '@storybook/addon-actions',
     '@storybook/addon-storysource',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        sourceLoaderOptions: {
-          injectStoryParameters: false,
-        },
-      },
-    },
   ],
 };
