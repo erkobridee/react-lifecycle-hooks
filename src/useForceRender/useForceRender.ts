@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-// force the component to re-render
+/**
+ * This react hook will force the component re-render
+ *
+ * @returns forceRender - function
+ */
 export const useForceRender = () => {
   const [, setTick] = React.useState(true);
 
