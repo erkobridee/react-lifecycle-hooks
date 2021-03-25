@@ -35,3 +35,15 @@ jobs:
         run: npm run pullrequest --if-present
         env:
           CI: true
+
+      - name: Add the coverage report comment
+        uses: vebr/jest-lcov-reporter@v0.2.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Send report to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/clover.xml # optional
+          flags: unit_tests # optional

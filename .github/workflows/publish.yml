@@ -33,6 +33,13 @@ jobs:
         env:
           CI: true
 
+      - name: Send report to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/clover.xml # optional
+          flags: unit_tests # optional
+
       - name: Deploy docs
         uses: peaceiris/actions-gh-pages@v3
         with:
