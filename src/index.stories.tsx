@@ -8,12 +8,76 @@ export default {
 
 const name = 'useful react lifecycle hooks';
 
+const ExternalLink = ({ label, href }) => (
+  <a
+    className="text-blue-600 hover:text-blue-400 underline hover:no-underline"
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {label}
+  </a>
+);
+
 export const Welcome = () => {
   console.log(`Welcome to ${name}`);
 
   return (
-    <div className="rounded shadow-md p-3">
-      <h1 className="text-blue-500">Welcome to {name}!</h1>
+    <div className="flex flex-col space-y-3">
+      <div className="flex flex-row  space-x-2 ml-4">
+        <a href="https://github.com/erkobridee/react-lifecycle-hooks/actions/workflows/publish.yml">
+          <img
+            src="https://github.com/erkobridee/react-lifecycle-hooks/workflows/CI%20-%20build%20and%20publish/badge.svg"
+            alt="Actions Status"
+          />
+        </a>
+
+        <a href="https://codecov.io/gh/erkobridee/react-lifecycle-hooks">
+          <img
+            src="https://codecov.io/gh/erkobridee/react-lifecycle-hooks/branch/main/graph/badge.svg"
+            alt="codecov"
+          />
+        </a>
+
+        <a href="https://github.com/erkobridee/react-lifecycle-hooks/blob/main/LICENSE">
+          <img
+            src="https://img.shields.io/github/license/erkobridee/react-lifecycle-hooks"
+            alt="GitHub license"
+          />
+        </a>
+
+        <a href="https://github.com/erkobridee/react-lifecycle-hooks">
+          <img
+            src="https://img.shields.io/github/stars/erkobridee/react-lifecycle-hooks?style=social"
+            alt="GitHub Repo stars"
+          />
+        </a>
+
+        <a href="https://erkobridee.github.io/react-lifecycle-hooks">
+          <img
+            src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg"
+            alt="Storybook"
+          />
+        </a>
+      </div>
+      <div className="rounded shadow-md p-3">
+        <h1 className="text-blue-900">Welcome to {name}!</h1>
+      </div>
+      <div className="rounded shadow-md p-3 flex flex-col space-y-1">
+        <div>Useful references:</div>
+        <ExternalLink
+          label="State and Lifecycle | React.js Docs"
+          href="https://reactjs.org/docs/state-and-lifecycle.html"
+        />
+        <ExternalLink
+          label="The Component Lifecycle | React.js Docs"
+          href="https://reactjs.org/docs/react-component.html#the-component-lifecycle"
+        />
+        <ExternalLink
+          label="Introducing Hooks | React.js Docs"
+          href="https://reactjs.org/docs/hooks-intro.html"
+        />
+      </div>
     </div>
   );
 };
