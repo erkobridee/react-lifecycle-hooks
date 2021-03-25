@@ -34,8 +34,8 @@ export default {
     '!**/public/**',
     '!**/types/**',
   ],
-  coverageReporters: ['cobertura', 'html'],
-  reporters: [
+  coverageReporters: [/*'cobertura',*/ 'clover', 'html' /*, 'lcovonly'*/],
+  /*reporters: [
     'default',
     [
       'jest-junit',
@@ -45,5 +45,5 @@ export default {
         outputName: 'test-report.xml',
       },
     ],
-  ],
+  ],*/
 };
