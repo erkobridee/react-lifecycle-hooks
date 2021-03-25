@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/erkobridee/react-lifecycle-hooks/workflows/CI%20-%20build%20and%20publish/badge.svg)](https://github.com/erkobridee/react-lifecycle-hooks/)
+[![Actions Status](https://github.com/erkobridee/react-lifecycle-hooks/workflows/CI%20-%20build%20and%20publish/badge.svg)](https://github.com/erkobridee/react-lifecycle-hooks/) [![codecov](https://codecov.io/gh/erkobridee/react-lifecycle-hooks/branch/main/graph/badge.svg)](https://codecov.io/gh/erkobridee/react-lifecycle-hooks)
 
 # react lifecycle hooks
 
