@@ -34,7 +34,7 @@ export default {
     '!**/public/**',
     '!**/types/**',
   ],
-  coverageReporters: [/*'cobertura',*/ 'clover', 'html' /*, 'lcovonly'*/],
+  coverageReporters: [/*'cobertura',*/ 'clover' /*, 'html' , 'lcovonly'*/],
   /*reporters: [
     'default',
     [
