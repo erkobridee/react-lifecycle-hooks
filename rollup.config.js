@@ -28,10 +28,9 @@ const defaultBuildConfig = {
   outputDir: 'dist-pack',
   bundleDir: 'dist',
   bundleEntry: 'src/index.ts',
-  moduleEntries: [],
 };
 
-const { outputDir, bundleDir, bundleEntry, moduleEntries = [] } = {
+const { outputDir, bundleDir, bundleEntry } = {
   ...defaultBuildConfig,
   ...(pkg.buildConfig || {}),
 };
@@ -90,23 +89,4 @@ const bundleConfig = {
   external,
 };
 
-let rollupConfig = [bundleConfig];
-
-if (Array.isArray(moduleEntries) && moduleEntries.length > 0) {
-  // https://rollupjs.org/guide/en/#outputpreservemodulesroot
-  const modulesConfig = moduleEntries.map((entry) => ({
-    input: moduleEntries,
-    output: {
-      format: 'es',
-      dir: outputDir,
-      preserveModules: true,
-      preserveModulesRoot: 'src',
-    },
-    plugins: rollupCommonPlugins,
-    external,
-  }));
-
-  rollupConfig = [...rollupConfig, ...modulesConfig];
-}
-
-export default rollupConfig;
+export default bundleConfig;

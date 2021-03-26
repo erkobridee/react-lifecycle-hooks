@@ -29,12 +29,6 @@ npm install --save-dev @erkobridee/ts-definitions-common
 ```javascript
 import { useConstructor } from '@erkobridee/react-lifecycle-hooks';
 
-// or
-
-import useConstructor from '@erkobridee/react-lifecycle-hooks/useConstructor';
-
-//---
-
 export const Component = () => {
   useConstructor(() => console.log(`executes before mount the component`));
 
@@ -48,12 +42,6 @@ export default Component;
 
 ```javascript
 import { useDidMount } from '@erkobridee/react-lifecycle-hooks';
-
-// or
-
-import useDidMount from '@erkobridee/react-lifecycle-hooks/useDidMount';
-
-//---
 
 export const Component = () => {
   useDidMount(() => console.log(`executes after component mounted`));
@@ -70,12 +58,6 @@ export default Component;
 import React from 'react';
 
 import { useDidUpdate } from '@erkobridee/react-lifecycle-hooks';
-
-// or
-
-import useDidUpdate from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
-
-//---
 
 export const Component = () => {
   const [count, setCount] = React.useState(0);
@@ -113,12 +95,6 @@ import React from 'react';
 
 import { useWillUnmount } from '@erkobridee/react-lifecycle-hooks';
 
-// or
-
-import useWillUnmount from '@erkobridee/react-lifecycle-hooks/useDidUpdate';
-
-//---
-
 const InnerComponent = () => {
   useWillUnmount(() => console.log(`executes before unmount the component`));
 
@@ -152,12 +128,6 @@ export default Component;
 import React from 'react';
 
 import { useForceRender } from '@erkobridee/react-lifecycle-hooks';
-
-// or
-
-import useForceRender from '@erkobridee/react-lifecycle-hooks/useForceRender';
-
-//---
 
 export const Component = () => {
   const forceRender = useForceRender();

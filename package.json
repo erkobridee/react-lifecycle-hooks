@@ -5,19 +5,12 @@
   "buildConfig": {
     "outputDir": "dist-pack",
     "bundleDir": "dist",
-    "bundleEntry": "src/index.ts",
-    "moduleEntries": [
-      "src/useConstructor/index.ts",
-      "src/useDidMount/index.ts",
-      "src/useDidUpdate/index.ts",
-      "src/useForceRender/index.ts",
-      "src/useWillUnmount/index.ts"
-    ]
+    "bundleEntry": "src/index.ts"
   },
   "packageFilesMap": {
     "types": ".",
-    "main": "dist/cjs.js",
-    "module": "dist/esm.js"
+    "main": "./dist/cjs.js",
+    "module": "./dist/esm.js"
   },
   "scripts": {
     "postinstall": "is-ci || npx husky install",
@@ -79,7 +72,7 @@
   "homepage": "https://github.com/erkobridee/react-lifecycle-hooks#readme",
   "peerDependencies": {
     "react": ">= 16.8.0",
-    "@erkobridee/ts-definitions-common": "^0.6.1"
+    "@erkobridee/ts-definitions-common": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -87,7 +80,7 @@
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.13.0",
-    "@erkobridee/ts-definitions-common": "^0.6.1",
+    "@erkobridee/ts-definitions-common": "^1.0.0",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
