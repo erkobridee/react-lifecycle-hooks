@@ -160,3 +160,9 @@ export default Component;
   - [The Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 
   - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
+
+- [React Hooks: everything you need to know! 🚀 | Softwareontheroad](https://softwareontheroad.com/react-hooks/) - (2019/03/10) The new React Hooks API is here and it's gonna change the way you develop react apps 🔥
+
+- [Under the hood of React’s hooks system | The Guild Blog](https://the-guild.dev/blog/react-hooks-system) - 2018/11/21
+
+- [Under-the-hood of React Hooks | by Craig Taub - ITNEXT](https://itnext.io/under-the-hood-of-react-hooks-805dc68581c3) - 2020/04/15
