@@ -161,6 +161,10 @@ export default Component;
 
   - [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
 
+- [6 Reasons to Use React Hooks Instead of Classes | by Dilantha Prasanjith | Bits and Pieces](https://blog.bitsrc.io/6-reasons-to-use-react-hooks-instead-of-classes-7e3ee745fe04) - 2020/09/14
+
+- [React Components vs. React Hooks | by Gerardo Fernández - Better Programming](https://betterprogramming.pub/react-components-vs-react-hooks-52932d4ab6db) - 2019/10/11
+
 - [React Hooks: everything you need to know! 🚀 | Softwareontheroad](https://softwareontheroad.com/react-hooks/) - (2019/03/10) The new React Hooks API is here and it's gonna change the way you develop react apps 🔥
 
 - [Under the hood of React’s hooks system | The Guild Blog](https://the-guild.dev/blog/react-hooks-system) - 2018/11/21
