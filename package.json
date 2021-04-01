@@ -1,6 +1,6 @@
 {
   "name": "@erkobridee/react-lifecycle-hooks",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "useful set of react hooks to manage any function component",
   "buildConfig": {
     "outputDir": "dist-pack",
