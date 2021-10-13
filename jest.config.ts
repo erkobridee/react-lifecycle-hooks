@@ -4,6 +4,8 @@
  */
 
 export default {
+  testEnvironment: 'jsdom',
+
   moduleNameMapper: {
     '\\.(css|less|scss|sass|styl)$': 'identity-obj-proxy',
     '^.+\\.svg$': `<rootDir>/src/__mocks__/svgrMock.js`,
